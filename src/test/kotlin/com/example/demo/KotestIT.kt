@@ -13,6 +13,6 @@ class KotestIT : StringSpec({
         "hello".length shouldBe 5
     }
     "startsWith should test for a prefix" {
-        "world" should startWith("war")
+        "world" should startWith("wor")
     }
 })
