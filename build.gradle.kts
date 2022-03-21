@@ -33,14 +33,13 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 
-	systemProperties = System.getProperties().map { it.key.toString() to it.value }.toMap()
-
-
 	useJUnitPlatform {
 
 		System.getProperty("includeTestTags")?.let {
 			includeTags = setOf(it)
 		}
+
+		systemProperties = System.getProperties().map { it.key.toString() to it.value }.toMap()
 
 		filter {
 			isFailOnNoMatchingTests = false
